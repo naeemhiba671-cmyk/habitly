@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Habitly — a simple space to build better habits, one day at a time.">
+  <meta name="theme-color" content="#0B1F3A">
+  <title>Habitly | Your daily habits</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#" aria-label="Habitly home">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <span>habitly<span class="brand-dot">.</span></span>
+      </a>
+      <p class="today-date" id="todayDate">Your daily reset</p>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="welcome" aria-labelledby="welcome-title">
+      <div class="welcome-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR DAILY RESET</p>
+        <h1 id="welcome-title">Small steps.<br><span>Big momentum.</span></h1>
+        <p class="welcome-text">A little progress each day adds up to remarkable results. Keep showing up for yourself.</p>
+        <div class="welcome-note"><span aria-hidden="true">✦</span> Progress over perfection</div>
+      </div>
+      <div class="welcome-art" aria-hidden="true">
+        <div class="art-orbit orbit-one"></div>
+        <div class="art-orbit orbit-two"></div>
+        <div class="art-sun"></div>
+        <div class="art-leaf leaf-one"></div>
+        <div class="art-leaf leaf-two"></div>
+        <div class="art-leaf leaf-three"></div>
+        <div class="art-stem"></div>
+        <div class="art-ground"></div>
+        <span class="art-spark spark-one">✦</span>
+        <span class="art-spark spark-two">✧</span>
+      </div>
+    </section>
+
+    <section class="quote-card" aria-labelledby="quote-heading">
+      <div class="quote-symbol" aria-hidden="true">“</div>
+      <div class="quote-content">
+        <p class="eyebrow" id="quote-heading">A THOUGHT FOR TODAY</p>
+        <p class="quote-text" id="dailyQuote" aria-live="polite">Loading your daily inspiration...</p>
+        <p class="quote-author" id="quoteAuthor"></p>
+      </div>
+      <span class="quote-spark" aria-hidden="true">✦</span>
+    </section>
+
+    <section class="overview" aria-labelledby="overview-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">AT A GLANCE</p>
+          <h2 id="overview-title">Your overview</h2>
+        </div>
+        <span class="overview-date" id="overviewDate">TODAY'S SNAPSHOT</span>
+      </div>
+      <div class="stats-grid">
+        <article class="stat-card stat-primary">
+          <div class="stat-topline"><span class="stat-label">Done today</span><span class="stat-icon" aria-hidden="true">✓</span></div>
+          <p class="stat-value" id="doneCount">0<span>/0</span></p>
+          <div class="stat-track"><span id="progressBar"></span></div>
+          <p class="stat-foot" id="progressMessage">Every small step counts</p>
+        </article>
+        <article class="stat-card">
+          <div class="stat-topline"><span class="stat-label">Your habits</span><span class="stat-icon flame" aria-hidden="true">✳</span></div>
+          <p class="stat-value" id="totalCount">0</p>
+          <p class="stat-foot">Little routines, meaningful change</p>
+        </article>
+        <article class="stat-card">
+          <div class="stat-topline"><span class="stat-label">Still to go</span><span class="stat-icon week-icon" aria-hidden="true">↗</span></div>
+          <p class="stat-value" id="remainingCount">0</p>
+          <p class="stat-foot">One step at a time</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="habits-section" aria-labelledby="habits-title">
+      <div class="section-heading habits-heading">
+        <div>
+          <p class="eyebrow">ONE DAY AT A TIME</p>
+          <h2 id="habits-title">Your habits</h2>
+        </div>
+        <span class="habit-count" id="habitCount">0 habits</span>
+      </div>
+
+      <form class="add-habit-panel" id="habitForm" novalidate>
+        <div class="form-heading">
+          <div>
+            <p class="eyebrow">MAKE IT HAPPEN</p>
+            <h3>Add a new habit</h3>
+          </div>
+          <span class="form-spark" aria-hidden="true">✦</span>
+        </div>
+        <label class="input-label" for="habitName">Habit name</label>
+        <div class="add-row">
+          <input id="habitName" name="habitName" type="text" maxlength="50" placeholder="e.g. Take a 15-minute walk" autocomplete="off">
+          <button class="add-button" type="submit"><span aria-hidden="true">＋</span> Add habit</button>
+        </div>
+        <div class="emoji-row">
+          <span class="input-label">Choose an emoji</span>
+          <div class="emoji-picker" id="emojiPicker" role="group" aria-label="Choose a habit emoji">
+            <button type="button" class="emoji-option selected" data-emoji="🌱" aria-label="Seedling" aria-pressed="true">🌱</button>
+            <button type="button" class="emoji-option" data-emoji="💧" aria-label="Water" aria-pressed="false">💧</button>
+            <button type="button" class="emoji-option" data-emoji="📚" aria-label="Books" aria-pressed="false">📚</button>
+            <button type="button" class="emoji-option" data-emoji="🧘" aria-label="Meditation" aria-pressed="false">🧘</button>
+            <button type="button" class="emoji-option" data-emoji="🏃" aria-label="Running" aria-pressed="false">🏃</button>
+            <button type="button" class="emoji-option" data-emoji="🌙" aria-label="Moon" aria-pressed="false">🌙</button>
+            <button type="button" class="emoji-option" data-emoji="✍️" aria-label="Writing" aria-pressed="false">✍️</button>
+            <button type="button" class="emoji-option" data-emoji="🎨" aria-label="Art" aria-pressed="false">🎨</button>
+          </div>
+        </div>
+        <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="habits-grid" id="habitsGrid" aria-live="polite"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <span class="empty-emoji" aria-hidden="true">🌿</span>
+        <h3>A fresh start begins here</h3>
+        <p>You don't have any habits yet. Add your first one above and take a small step today.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built with the CodGen Frontend Internship | <a href="https://codgen.in" target="_blank" rel="noopener noreferrer">codgen.in</a></p>
+    <span aria-hidden="true">✳</span>
+  </footer>
+</body>
+</html>
